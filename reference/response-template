@@ -1,0 +1,70 @@
+# Substantial Technical Research Response Template
+
+Use this structure for significant architecture, design, comparative research, and implementation decisions. Scale each section to the user's question; avoid repeating the same conclusion in multiple sections. If the user explicitly requests a different deliverable format, follow it while preserving evidence and decision quality.
+
+## 1. Executive Summary
+
+- Give the recommended approach first, in 2–5 sentences.
+- State why it fits the use case and the most important tradeoff.
+- State whether current sources were checked, with the verification date, or prominently disclose that they could not be checked.
+
+## 2. Context and Assumptions
+
+- Define the problem, expected consumers/workloads, business constraints, and success criteria.
+- Distinguish provided facts from assumptions (e.g., throughput, AWS region, budget, privacy requirements, team capability).
+- State what would change the decision if an assumption proves false.
+
+## 3. Research Findings
+
+- Report the few findings that actually influence the decision, with linked citations immediately after claims.
+- Note exact product/API/model versions and source dates when relevant.
+- Distinguish official claims, independent measurements, and reasoned technical judgment.
+- Surface conflicting sources and limitations; do not pretend benchmarks are directly comparable when their workloads differ.
+
+## 4. Option Comparison
+
+For a legitimate multi-solution decision, show **four rows total: one recommended approach plus exactly three credible alternatives**, with concise entries in a table:
+
+| Option | Best for | Pros | Cons | Complexity | Cost / operations | Assessment |
+|---|---|---|---|---|---|---|
+| Recommended | ... | ... | ... | ... | ... | Preferred for stated constraints |
+| Alternative 1 | ... | ... | ... | ... | ... | ... |
+| Alternative 2 | ... | ... | ... | ... | ... | ... |
+| Alternative 3 | ... | ... | ... | ... | ... | ... |
+
+Use relative labels (Low/Medium/High) only when they are reasoned estimates with a stated basis; do not invent prices or benchmark scores. If fewer than three serious alternatives exist, state why, and do not pad the table.
+
+## 5. Recommended Architecture or Strategy
+
+- Describe components, responsibilities, data and request flows, trust boundaries, persistence, and failure handling.
+- Include a simple text diagram or Mermaid diagram when it improves clarity.
+- Identify concrete technology choices with decision rationale and what remains configurable.
+
+## 6. Step-by-Step Implementation Plan
+
+- Sequence a proof of concept, implementation, testing/evaluation, rollout, and ongoing operations.
+- For each meaningful phase, identify deliverables, dependencies, ownership, expected observations, and a pass/fail gate.
+- Call out AWS/cloud or enterprise access approvals and irreversible or costly steps before they occur.
+
+## 7. Example Code or Configuration
+
+- Include Python, TypeScript, Terraform, YAML, API payloads, or pseudocode only if it materially accelerates implementation.
+- Prefer runnable small examples, typed interfaces, and error-handling patterns over decorative sample code.
+- Explicitly indicate untested examples, placeholders, required dependencies/versions, and where to confirm an API is supported.
+
+## 8. Risks and Mitigations
+
+Cover the material subset of security/privacy, reliability, data quality, cost, latency, observability, vendor lock-in, scaling, support, and model/framework drift. State a concrete mitigation or validation action for each critical risk. Do not turn a minor question into a full threat model.
+
+## 9. Final Recommendation
+
+- State the exact preferred approach and why it is stronger for the stated constraints than each credible alternative.
+- Give a **first next action** (e.g., a spike, ADR, benchmark, test harness, architecture review, or prototype).
+- State explicit conditions that would cause a different option to win.
+
+## Quality rules
+
+- Avoid repeating full citations or duplicate rationale between Findings, Comparison, and Final Recommendation.
+- Don't include a section if the requested task truly does not call for it, except when the user explicitly requested this complete report.
+- If source retrieval was unavailable, say **"I could not verify the latest information"** and clearly identify knowledge limits; do not attach fabricated citations.
+- When the user is asking for a quick explanation, do not load or force this report template.
